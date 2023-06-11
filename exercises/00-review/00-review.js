@@ -1,3 +1,6 @@
+import { greet } from "./greet.js";
+
+
 /**
  * Solve this problem using ES modules (ESM).
  * ES modules allow you break up your code into multiple files (or modules), and then share code between different files.
@@ -43,9 +46,13 @@ const highestNumber = (array) => {
  * @example
  * combineArray(['Japan','China','India'], ['USA','UK']) // ['Japan','China','India','USA','UK']
  **/
+const array1 = ["Japan", "China", "India"];
+const array2 = ["USA", "UK"];
 
 const combineArray = (array1, array2) => {
   // Write your answer here
+  const mergeArray = [...array1, ...array2];
+  return mergeArray;
 };
 
 /**
@@ -57,6 +64,8 @@ const combineArray = (array1, array2) => {
 
 const combineObject = (obj1, obj2) => {
   // Write your answer here
+  const mergeObject = { ...obj1, ...obj2 };
+  return mergeObject;
 };
 
 /**
@@ -68,6 +77,7 @@ const combineObject = (obj1, obj2) => {
 
 const doubleValues = (arr) => {
   // Write your answer here
+
 };
 
 /**
