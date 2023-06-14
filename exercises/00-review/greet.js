@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const greet = (name) => {
   return `Hello ${name}!`;
 };
@@ -5,3 +6,10 @@ const greet = (name) => {
 
 export default greet
  
+=======
+export { greet as default };
+
+const greet = (name) => {
+  return `Hello ${name}!`;
+};
+>>>>>>> 1102a559497e14c7cbd0096e6cec5a4f1808d6fb

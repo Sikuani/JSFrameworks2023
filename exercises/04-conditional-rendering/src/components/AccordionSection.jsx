@@ -1,4 +1,9 @@
+import { useState } from "react";
+
 function AccordionSection({ isOpen, title, content }) {
+
+    const [isActive, setIsActive] = useState(false)
+
     return (
       <>
         <div className={`title ${isOpen ? 'active' : ''}`}>
@@ -13,3 +18,9 @@ function AccordionSection({ isOpen, title, content }) {
   }
   
   export default AccordionSection;
+
+
+
+
+  
+  

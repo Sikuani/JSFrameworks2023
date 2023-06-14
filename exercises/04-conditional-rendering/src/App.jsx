@@ -6,7 +6,7 @@ function App() {
     <div class="ui styled accordion">{/* Write code here */}
       <div class="title active">
         <i class="dropdown icon"></i>
-        Why would anyone use React?
+        Why would anyone use React2?
       </div>
       <div class="content active">
         <p class="transition visible">
