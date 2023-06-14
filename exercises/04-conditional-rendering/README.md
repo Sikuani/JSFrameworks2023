@@ -31,6 +31,7 @@ For this assignment, you will build an accordion. An [accordion](https://semanti
 
 ![An example of an accordion](demo.png)
 
+
 Create a component called _AccordionSection_. It should render one of the sample HTML snippets below to the screen. It should receive _isOpen_ - a boolean - as a prop. If _isOpen_ is true, use the snippet of code when the accordion section is expanded. When this value is false, you the snippet of code for when the accordion section is collapsed. (Your _AccordionSection_ component can receive other props.)
 
 Import your _AccordionSection_ component in your _App.jsx_ file. Using _AccordionSection_, create an accordion with three sections, where only the middle section is expanded.
