@@ -1,26 +1,21 @@
-import { useState } from "react";
+const AccordionSection = (props) => {
+  // If collapsed / closed
+  return (
+    <>
+      <div className={props.isOpen ? "title active" : "title"}>
+        <i className="dropdown icon"></i>
+        {props.title}
+      </div>
 
-function AccordionSection({ isOpen, title, content }) {
+      <div className={props.isOpen ? "content active" : "content"}>
+        <p
+          className={props.isOpen ? "transition visible" : "transition hidden"}
+        >
+          {props.paragraph}
+        </p>
+      </div>
+    </>
+  );
+};
 
-    const [isActive, setIsActive] = useState(false)
-
-    return (
-      <>
-        <div className={`title ${isOpen ? 'active' : ''}`}>
-          <i className="dropdown icon"></i>
-          {title}
-        </div>
-        <div className={`content ${isOpen ? 'active' : ''}`}>
-          <p className={`transition ${isOpen ? 'visible' : 'hidden'}`}>{content}</p>
-        </div>
-      </>
-    );
-  }
-  
-  export default AccordionSection;
-
-
-
-
-  
-  
+export default AccordionSection;
