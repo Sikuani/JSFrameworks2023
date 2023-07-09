@@ -1,6 +1,9 @@
 // Import what you need from React
+import { useContext } from "react";
 import translations from "./CreateAccountTranslations.json";
+
 // Import "TranslatorContext"
+import { TranslatorContext } from "../../contexts/TranslatorContext";
 
 function CreateAccount() {
   /**
@@ -12,7 +15,8 @@ function CreateAccount() {
   /**
    * Replace "en" with a constant or variable.
    */
-  const t = translations["en"];
+  const { traslator } = useContext(TranslatorContext);
+  const t = translations[traslator];
 
   /**
    * You do not have to change anything below this line.

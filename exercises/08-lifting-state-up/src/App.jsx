@@ -2,6 +2,7 @@ import "./App.css";
 
 import Temperature from "./components/Temperature/Temperature";
 import Address from "./components/Address/Address";
+import Likes from "./components/Likes/Likes";
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
         <h1 className="h3">Challenge 2 - Address Form</h1>
         <Address />
       </div>
+
+      {/* <div className="bg-secondary pt-4 pb-4 mb-4">
+        <Likes />
+      </div> */}
     </>
   );
 }

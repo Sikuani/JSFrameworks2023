@@ -3,17 +3,19 @@ import React, { useState } from "react";
 function GuessTheNumber() {
   const [guess, setGuess] = useState("");
   const [message, setMessage] = useState("");
-  const [randomNumber] = useState(generateRandomNumber());
+  const [randomNumber, setRandomNumber] = useState(
+    Math.floor(Math.random() * 10) + 1
+  );
 
   function generateRandomNumber() {
-    return Math.floor(Math.random() * 10) + 1;
+    setRandomNumber(Math.floor(Math.random() * 10) + 1);
   }
 
   function handleInputChange(event) {
     setGuess(event.target.value);
   }
 
-  function handleSubmit(event) {
+  function handleGuessSubmit(event) {
     event.preventDefault();
 
     if (!guess || isNaN(guess) || guess < 1 || guess > 10) {
@@ -30,11 +32,20 @@ function GuessTheNumber() {
     }
 
     setGuess("");
+    generateRandomNumber();
   }
+
+  const handleRestartGame = (e) => {
+    e.preventDefault();
+
+    setGuess("");
+    setMessage("");
+    generateRandomNumber();
+  };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleGuessSubmit}>
         <input
           type="number"
           value={guess}
@@ -42,9 +53,10 @@ function GuessTheNumber() {
           min={1}
           max={10}
         />
-        <button type="submit">Submit Guess</button>
+        <button onClick={handleGuessSubmit}>Submit Guess</button>
+        <p>{message}</p>
+        <button onClick={handleRestartGame}>Restart Game</button>
       </form>
-      {message && <p>{message}</p>}
     </div>
   );
 }

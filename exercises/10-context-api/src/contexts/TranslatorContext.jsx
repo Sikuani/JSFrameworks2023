@@ -1,3 +1,4 @@
+import { Children } from "react";
 import { createContext, useState } from "react";
 
 /**
@@ -12,4 +13,14 @@ export function TranslatorProvider({ children }) {
    * @see exercises/08a-context-api/src/App.jsx
    * @see solutions/08a-context-api/App.solutions.jsx
    */
+
+  const [traslator, setTraslator] = useState("en");
+
+  return (
+    <TranslatorContext.Provider value={{ traslator, setTraslator }}>
+      {children}
+    </TranslatorContext.Provider>
+  );
 }
+
+/* Eye >> .provider ever return an object */

@@ -8,6 +8,8 @@ import { CharacterCount } from "./components/CharacterCount/CharacterCount";
 //Import GuessTheNumber
 import GuessTheNumber from "./components/GuessTheNumber/GuessTheNumber";
 
+import TemperatureConverter from "./components/TemperatureConverter";
+
 function App() {
   return (
     <>
@@ -34,6 +36,10 @@ function App() {
         <h1 className="h3">Challenge 3 - Guessing The Number</h1>
         {/* Add GuessingTheNumber here */}
         <GuessTheNumber />
+      </div>
+
+      <div>
+        <TemperatureConverter />
       </div>
     </>
   );
