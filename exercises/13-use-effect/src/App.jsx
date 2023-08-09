@@ -1,5 +1,5 @@
 // import useEffect
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 // import Axios (or use Fetch)
 
@@ -7,6 +7,18 @@ function App() {
   /**
    * Set up state and make AJAX requests here
    */
+
+  const [first, setfirst] = useState(second)
+
+  useEffect(() => {
+    fetch(`"https://rickandmortyapi.com/api/character`)
+    .then((resp) => resp.json())
+    .then((resp) => )
+
+    return () => {
+      second;
+    };
+  }, [third]);
 
   return (
     <div className="container">
