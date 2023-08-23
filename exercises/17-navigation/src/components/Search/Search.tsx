@@ -1,5 +1,5 @@
 import { useState, FormEvent } from "react";
-import { Link } from "react-router-dom"; // Do you need to import anything else here?
+import { Link, useNavigate, useLocation } from "react-router-dom"; // Do you need to import anything else here?
 import NavBar from "../NavBar/NavBar";
 import SearchImage from "./SearchImage";
 import { products } from "../../assets/products";
@@ -13,26 +13,37 @@ const search = (newQuery: string) => {
   return newQuery
     ? products.filter((product) =>
         [...product.name.split(" "), ...product.tags].some((p) =>
+        //! some: devuelve true si el valor {newQuery} se encuentra dentro de los products y es adicionado al array que retorna filter.
+
           p.toLowerCase().match(new RegExp(`^${newQuery.toLowerCase()}`))
+          //p.toLowerCase().includes(newQuery.toLowerCase())
         )
       )
     : products;
 };
 
-function Search() {
+function Search() { //! esto es un componente JSX Element
   /**
    * Add something here
    */
+
+  const navigate = useNavigate();
+  const location = useLocation(); // guarda el input value.
+
+
 
   /**
    * When the user hits the back and forward button, or refreshes the page,
    * you will need to get what the user search for from history.
    * Set the starting value of the text in the search textbox.
    */
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(location.state?.query || ""); //! optional chaining
   /**
    * This populates the search results.
    */
+
+  console.log(location);
+
   const [results, setResults] = useState(search(query));
 
   const handleSubmit = (e: FormEvent) => {
@@ -42,7 +53,12 @@ function Search() {
     /**
      * With "useNavigate", put what the user searched for in history.
      */
+
+    
   };
+
+
+
 
   return (
     <>
